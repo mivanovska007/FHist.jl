@@ -20,9 +20,9 @@ function Makie.plot!(myplot::StackedHist{<:Tuple{AbstractVector{<:Hist1D}}})
     )
     myplot
 end
-# function Makie.stairs(h::Hist1D; baseline = 0.0, kwargs...)
-#     Makie.stairs(binedges(h), vcat(baseline, bincounts(h)); kwargs...)
-# end
+function Makie.stairs(h::Hist1D; baseline = 0.0, kwargs...)
+    Makie.stairs(binedges(h), vcat(baseline, bincounts(h)); kwargs...)
+end
 function Makie.stairs!(h::Hist1D; baseline = 0.0, kwargs...)
     Makie.stairs!(binedges(h), vcat(baseline, bincounts(h)); kwargs...)
 end
